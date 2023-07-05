@@ -11,7 +11,7 @@
     box-sizing:border-box
 }
 body{
-    height:225vh ;
+    height:185vh ;
 }
 #title{
     font-family: "Marconi";
@@ -36,11 +36,24 @@ header nav ul li a{
 }
 
 main{
-    height: 190vh;
+    height: 150vh;
 }
 #recuadro-quienes-somos{
     background-color: rgb(238, 200, 255);
 }
+#foto1{
+    width:300px;
+    height:250px;
+}
+#foto2{
+    width:300px;
+    height:250px;
+}
+#foto3{
+    width:300px;
+    height:250px;
+}
+
 footer{
     
     height: 10vh;
