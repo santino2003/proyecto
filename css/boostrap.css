@@ -1,0 +1,48 @@
+
+@font-face{
+    font-family: "Marconi";
+    src: url("../assets/fuente/macaroni/Macaroni.ttf");
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box
+}
+body{
+    height:225vh ;
+}
+#title{
+    font-family: "Marconi";
+    font-size: 6rem
+}
+header{
+    background-color: rgb(238, 200, 255);
+    height:25vh ;
+}
+header div nav ul li{
+    font-size: 1rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    list-style-type: none;
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+
+header nav ul li a{
+    
+    color: rgb(21, 22, 22);
+}
+
+main{
+    height: 190vh;
+}
+#recuadro-quienes-somos{
+    background-color: rgb(238, 200, 255);
+}
+footer{
+    
+    height: 10vh;
+     background-color: rgb(238, 200, 255);
+}
