@@ -10,16 +10,14 @@
     padding: 0;
     box-sizing:border-box
 }
-body{
-    height:190vh ;
-}
+
 #title{
     font-family: "Marconi";
-    font-size: 6rem
+    font-size: 600%
 }
 header{
     background-color: rgb(238, 200, 255);
-    height:25vh ;
+    
 }
 header div nav ul li{
     font-size: 1rem;
@@ -35,9 +33,7 @@ header nav ul li a{
     color: rgb(21, 22, 22);
 }
 
-main{
-    height: 155vh;
-}
+
 #recuadro-quienes-somos{
     background-color: rgb(238, 200, 255);
 }
@@ -48,6 +44,6 @@ main{
 
 footer{
     
-    height: 10vh;
+     height: 10vh; 
      background-color: rgb(238, 200, 255);
 }
