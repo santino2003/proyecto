@@ -1,0 +1,54 @@
+$bg-main-color: rgb(238, 200, 255);
+$bg-li-color:  aliceblue;
+$bg-a-color: black;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+@font-face{
+    font-family: "Marconi";
+    src: url("../assets/fuente/macaroni/Macaroni.ttf");
+    
+}
+
+#title{
+    font-family: "Marconi";
+    font-size: 550%;
+}
+
+header{
+    background-color: $bg-main-color;
+    div{
+        nav{
+            ul{
+                li{
+                    font-size: 1rem;
+                    padding-left: 5%;
+                    padding-right: 5%;
+                    list-style-type: none;
+                    border-radius: 5px;
+                    background-color: $bg-li-color;
+                    a{
+                        color:$bg-a-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#recuadro-quienes-somos{
+    background-color: $bg-main-color;
+}
+.fotoProducto{
+    width:12rem;
+    height: 9rem;;
+}
+
+footer{ 
+    height: 10vh; 
+    background-color: $bg-main-color;
+}

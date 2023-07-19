@@ -1,4 +1,3 @@
-
 @font-face{
     font-family: "Marconi";
     src: url("../assets/fuente/macaroni/Macaroni.ttf");
@@ -28,7 +27,7 @@ header div nav ul li{
     background-color: aliceblue;
 }
 
-header nav ul li a{
+header div nav ul li a{
     
     color: rgb(21, 22, 22);
 }
@@ -42,8 +41,7 @@ header nav ul li a{
     height: 9rem;;
 }
 
-footer{
-    
+footer{ 
     height: 10vh; 
     background-color: rgb(238, 200, 255);
 }
