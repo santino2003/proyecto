@@ -13,7 +13,7 @@
 
 #title{
     font-family: "Marconi";
-    font-size: 600%
+    font-size: 550%
 }
 header{
     background-color: rgb(238, 200, 255);
@@ -44,6 +44,6 @@ header nav ul li a{
 
 footer{
     
-     height: 10vh; 
-     background-color: rgb(238, 200, 255);
+    height: 10vh; 
+    background-color: rgb(238, 200, 255);
 }
