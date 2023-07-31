@@ -30,20 +30,21 @@
     <body class="container-fluid">
         <header class="row sticky-top">
             <div class="row">
-                <h1 class="d-none d-xl-block col-xl-2 text-center">
+                <h1 class="d-none d-md-block col-2 text-end">
                     <img
-                        src="./assets/img/mm.png"
+                        class="pl-6"
+                        src="./assets/img/mm-removebg-preview.png"
                         alt="Logo MoonShop"
                         id="foto_logo"
-                        height="110px"
-                        width="130" />
+                        height="170rem"
+                        width="170rem" />
                 </h1>
                 <p
                     id="title"
-                    class="col-xl-8 col-md-12 text-center">
+                    class="col-md-8 col-12 text-center">
                     Moon Shop
                 </p>
-                <div class="d-none d-xl-block pt-1 col-xl-2 text-center">
+                <div class="d-none d-md-block  col-2 text-center">
                     <a
                         href="https://web.whatsapp.com/"
                         alt="ruta a mensaje de whatsapp"
@@ -56,49 +57,66 @@
                     </a>
                 </div>
             </div>
-            </div>
-            <div class="row w-100">
-                <nav class="col-xl-12 col-md-12 w-100 h-100">
-                    <ul
-                        class="d-flex flex-wrap justify-content-around align-items-center h-100">
-                        <li>
-                            <a href="./index.html">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="./pages/en_oferta.html">En oferta</a>
-                        </li>
-                        <li>
-                            <a href="./pages/catalogo.html">Catalogo</a>
-                        </li>
-                        <li>
-                            <a href="./pages/contacto.html">Contacto</a>
-                        </li>
-                        <li>
-                            <a href="./pages/FaQ.html">FaQ</a>
-                        </li>
-                    </ul>
+            <div class="row text-center">
+                <nav class="navbar navbar-expand-md d-flex justify-content-center">
+                    <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto d-flex flex-wrap justify-content-around align-items-center w-100" >
+                            <li class="nav-item bg-transparent">
+                                <a class="nav-link" href="./index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item bg-transparent">
+                                <a class="nav-link" href="./pages/en_oferta.html">En oferta</a>
+                            </li>
+                            <li class="nav-item bg-transparent">
+                                <a class="nav-link" href="./pages/catalogo.html" >Catalogo</a>
+                            </li>
+                            <li class="nav-item bg-transparent">
+                                <a class="nav-link" href="./pages/contacto.html" id="testimonial">Contacto</a>
+                            </li>
+                            <li class="nav-item bg-transparent">
+                                <a class="nav-link" href="./pages/FaQ.html" id="contact">FaQ</a>
+                            </li>
+                        </ul>
+                    </div>            
                 </nav>
             </div>
+            
         </header>
-        <main class="row">
+        <main class="row w-100">
+ 
             <div class="row text-center">
-                <div class="col-xl-12 col-md-12">
+                <div class="d-md-none col-12 text-center">
                     <img
+                        
                         src="./assets/img/mm.png"
                         alt="Logo MoonShop"
                         height="200rem"
                         width="200rem" />
                 </div>
+                <div class="d-none d-md-block">
+                    <img
+                    class="img-fluid"
+                    src="./assets/img/fashion-2309519_1280.webp"
+                    alt="Foto blanco y negro mujer con sombrero"
+                    width="1450rem"
+                    />
             </div>
+                </div>
+                
             <div class="row">
-                <h5 class="col-xl-12 col-md-12 fst-italic fs-3">
+                <h5 class="col-lg-12 col-md-12 fst-italic fs-3">
                     ¿ Quienes somos ?
                 </h5>
             </div>
             <div
                 id="recuadro-quienes-somos"
                 class="row">
-                <p class="col-xl-6 col-md-12">
+                <p class="col-xxl-4 col-12 text-justify" style="font-size:larger; padding-top: 1.5%; ">
                     En Moon Shop, nos apasiona la moda y creemos en el poder que
                     tiene la ropa para expresar nuestra individualidad y estilo.
                     Nos dedicamos a ofrecerte las últimas tendencias en moda
@@ -115,21 +133,103 @@
                     vestidos y trajes hasta ropa casual y accesorios, tenemos
                     todo lo que necesitas para completar tu look.
                 </p>
-                <div class="col-xl-6 col-md-12 text-center">
+                <div class="col-xxl-8 col-12">
                     <img
                         class="img-fluid"
-                        src="./assets/img/fashion-2309519_1280.webp"
-                        alt="Foto blanco y negro mujer con sombrero"
-                        height="100rem"
-                        width="500rem" />
+                        src="./assets/img/index.webp"
+                        alt="Foto blanco y negro mujer espejo" 
+                        width="100%"/>
                 </div>
             </div>
             <div class="row">
                 <h5 class="fst-italic fs-3">Productos destacados</h5>
             </div>
+    
+            <div class="row ">
+                <ul class="row flex-nowrap overflow-auto " >
+                    <li class="col-6 col-md-4 col-lg-3 text-center">
+                        <div width="80rem">
+                            <img
+                            class="fotoProducto img-fluid"
+                            src="./assets/img/pantalon.webp"
+                            alt="Foto Pantalon Pala talle M" />
 
-            <div class="row pb-2">
-                <div class="col-4  text-center">
+                        <p>Pantalon Pala talle M</p>
+
+                        <p>Precio: $3000</p>
+                        <input
+                            type="button"
+                            value="Comprar" />
+                        </div>
+
+                    </li>
+                    <li class="col-6 col-md-4 col-lg-3 text-center">
+                        <div width="80rem">
+                            <img
+                            class="fotoProducto img-fluid"
+                            src="./assets/img/pantalon.webp"
+                            alt="Foto Pantalon Pala talle M" />
+
+                        <p>Pantalon Pala talle M</p>
+
+                        <p>Precio: $3000</p>
+                        <input
+                            type="button"
+                            value="Comprar" />
+                        </div>
+
+                    </li>
+                    <li class="col-6 col-md-4 col-lg-3 text-center">
+                        <div width="80rem">
+                            <img
+                            class="fotoProducto img-fluid"
+                            src="./assets/img/pantalon.webp"
+                            alt="Foto Pantalon Pala talle M" />
+
+                        <p>Pantalon Pala talle M</p>
+
+                        <p>Precio: $3000</p>
+                        <input
+                            type="button"
+                            value="Comprar" />
+                        </div>
+
+                    </li>
+                    <li class="col-6 col-md-4 col-lg-3 text-center">
+                        <div width="80rem">
+                            <img
+                            class="fotoProducto img-fluid"
+                            src="./assets/img/pantalon.webp"
+                            alt="Foto Pantalon Pala talle M" />
+
+                        <p>Pantalon Pala talle M</p>
+
+                        <p>Precio: $3000</p>
+                        <input
+                            type="button"
+                            value="Comprar" />
+                        </div>
+
+                    </li>
+                    <li class="col-6 col-md-4 col-lg-3 text-center">
+                        <div width="80rem">
+                            <img
+                            class="fotoProducto img-fluid"
+                            src="./assets/img/pantalon.webp"
+                            alt="Foto Pantalon Pala talle M" />
+
+                        <p>Pantalon Pala talle M</p>
+
+                        <p>Precio: $3000</p>
+                        <input
+                            type="button"
+                            value="Comprar" />
+                        </div>
+
+                    </li>
+                
+                
+                <!-- <div class="col-4  text-center">
                     <img
                         class="fotoProducto img-fluid"
                         src="./assets/img/pantalon.webp"
@@ -169,13 +269,13 @@
                         type="button"
                         value="Comprar" />
                 </div>
-            </div>
+            </div>  -->
         </main>
         <footer class="row">
-            <p class="col-xl-12 col-10 text-start">
+            <p class="col-md-12 col-10 text-center">
                 copy ® Santino Peiretti todos los derechos reservados
             </p>
-            <div class="d-xl-none col-2 text-center">
+            <div class="d-md-none col-2 text-center">
                 <a
                     href="https://web.whatsapp.com/"
                     alt="ruta a mensaje de whatsapp"

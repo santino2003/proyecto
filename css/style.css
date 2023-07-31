@@ -1,21 +1,27 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0%;
+  padding: 0%;
   box-sizing: border-box;
 }
-
+.row{
+  --bs-gutter-x: 0
+}
+.container-fluid{
+  --bs-gutter-x: 0
+}
 @font-face {
   font-family: "Marconi";
   src: url("../assets/fuente/macaroni/Macaroni.ttf");
 }
 #title {
   font-family: "Marconi";
-  font-size: 550%;
+  font-size: 590%;
+  margin: 0%;
 }
 
 header {
-  background: rgb(254, 150, 255);
-  background: linear-gradient(90deg, rgba(254, 150, 255, 0.98) 0%, rgb(255, 100, 200) 50%, rgba(255, 200, 200, 0.9023984594) 100%);
+  background: rgb(194,181,167);
+background: linear-gradient(90deg, rgba(194,181,167,1) 0%, rgba(126,106,142,1) 48%, rgba(194,181,167,1) 100%);
 }
 header div nav ul li {
   font-size: 1rem;
@@ -33,20 +39,66 @@ header div nav ul li a {
   color: black;
 }
 
-#recuadro-quienes-somos {
-  background: rgb(254, 150, 255);
-  background: linear-gradient(90deg, rgba(254, 150, 255, 0.98) 0%, rgb(255, 100, 200) 50%, rgba(255, 200, 200, 0.9023984594) 100%);
+#recuadro-quienes-somos {  
+background: rgb(194,181,167);
+background: linear-gradient(90deg, rgba(194,181,167,1) 0%, rgba(126,106,142,1) 48%, rgba(194,181,167,1) 100%);
 }
+
+
+main div ul li{
+  padding-left: 2% !important;
+  padding-right: 2% !important;
+  list-style-type: none;
+}
+main div ul li div{
+  border: grey 1px solid;
+  transition: transform 2s
+}   
+
+main div ul li div:hover{
+  transform: scale(1.03, 1);
+  background: rgb(194,181,167);
+  background: linear-gradient(90deg, rgba(194,181,167,1) 0%, rgba(126,106,142,1) 48%, rgba(194,181,167,1) 100%);
+
+
+}
+
 
 .fotoProducto {
   width: 12rem;
   height: 9rem;
 }
 
+#form{
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+#boton-contacto{
+  background: rgb(194,181,167);
+  background: linear-gradient(90deg, rgba(194,181,167,1) 0%, rgba(126,106,142,1) 48%, rgba(194,181,167,1) 100%);
+  border-radius: 5px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width: 100%;
+}
+.form-control:hover{
+  background: rgb(194,181,167);
+  background: linear-gradient(90deg, rgba(194,181,167,1) 0%, rgba(126,106,142,1) 48%, rgba(194,181,167,1) 100%);
+}
+
+form div div{
+  padding-top: 1.5%;
+}
+#foto-contacto{
+  padding-top: 1%;
+}
+
+
 footer {
   height: 10vh;
-  background: rgb(254, 150, 255);
-  background: linear-gradient(90deg, rgba(254, 150, 255, 0.98) 0%, rgb(255, 100, 200) 50%, rgba(255, 200, 200, 0.9023984594) 100%);
+  background: rgb(194,181,167);
+background: linear-gradient(90deg, rgba(194,181,167,1) 0%, rgba(126,106,142,1) 48%, rgba(194,181,167,1) 100%);
 }
 
 /*# sourceMappingURL=style.css.map */
