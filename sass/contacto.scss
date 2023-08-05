@@ -1,0 +1,25 @@
+form{
+    div{
+        div{
+            padding-top: 1.5%;
+        }
+    }
+}
+
+#boton-contacto{
+    background: rgb(194,181,167);
+    background: linear-gradient(90deg, rgba(194,181,167,1) 0%, rgba(126,106,142,1) 48%, rgba(194,181,167,1) 100%);
+    border-radius: 5px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%;
+}
+
+.form-control:hover{
+    background: rgb(194,181,167);
+    background: linear-gradient(90deg, rgba(194,181,167,1) 0%, rgba(126,106,142,1) 48%, rgba(194,181,167,1) 100%);
+}
+
+#foto-contacto{
+    padding-top: 1%;
+}

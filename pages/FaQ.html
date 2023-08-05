@@ -28,20 +28,21 @@
     <body  class="container-fluid">
         <header class="row sticky-top">
             <div class="row">
-                <h1 class="d-none d-xl-block col-xl-2 text-center">
+                <h1 class="d-none d-md-block col-2 text-end">
                     <img
-                        src="../assets/img/mm.png"
+                        class="pl-6"
+                        src="../assets/img/mm-removebg-preview.png"
                         alt="Logo MoonShop"
                         id="foto_logo"
-                        height="110px"
-                        width="130" />
+                        height="170rem"
+                        width="170rem" />
                 </h1>
                 <p
                     id="title"
-                    class="col-xl-8 col-md-12 text-center">
+                    class="col-md-8 col-12 text-center">
                     Moon Shop
                 </p>
-                <div class="d-none d-xl-block pt-1 col-xl-2 text-center">
+                <div class="d-none d-md-block  col-2 text-center">
                     <a
                         href="https://web.whatsapp.com/"
                         alt="ruta a mensaje de whatsapp"
@@ -54,32 +55,39 @@
                     </a>
                 </div>
             </div>
-            <div class="row w-100">
-                <nav class="col-xl-12 col-md-12 w-100 h-100">
-                    <ul
-                        class="d-flex flex-wrap justify-content-around align-items-center h-100">
-                        <li>
-                            <a href="../index.html">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="./en_oferta.html">En oferta</a>
-                        </li>
-                        <li>
-                            <a href="./catalogo.html">Catalogo</a>
-                        </li>
-                        <li>
-                            <a href="./contacto.html">Contacto</a>
-                        </li>
-                        <li>
-                            <a href="./FaQ.html">FaQ</a>
-                        </li>
-                    </ul>
+            <div class="row text-center">
+                <nav class="navbar navbar-expand-md d-flex justify-content-center">
+                    <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto d-flex flex-wrap justify-content-around align-items-center w-100" >
+                            <li class="nav-item bg-transparent">
+                                <a class="nav-link" href="../index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item bg-transparent">
+                                <a class="nav-link" href="../pages/en_oferta.html">En oferta</a>
+                            </li>
+                            <li class="nav-item bg-transparent">
+                                <a class="nav-link" href="../pages/catalogo.html" >Catalogo</a>
+                            </li>
+                            <li class="nav-item bg-transparent">
+                                <a class="nav-link" href="../pages/contacto.html" id="testimonial">Contacto</a>
+                            </li>
+                            <li class="nav-item bg-transparent">
+                                <a class="nav-link" href="../pages/FaQ.html" id="contact">FaQ</a>
+                            </li>
+                        </ul>
+                    </div>            
                 </nav>
             </div>
+            
         </header>
         <main class="row">
             <div class="row text-center">
-                <div class="col-xl-12 col-md-12">
+                <div class="col-12">
                     <img
                         
                         src="../assets/img/mm.png"
@@ -89,69 +97,101 @@
                 </div>
             </div>
             <div class="row">
-                <h5 class="col-xl-12 col-md-12 fst-italic fs-3">
-                    ¿ Cuáles son los métodos de pago aceptados en MoonShop ?
-                </h5>
+                <div class="col-xl-6 col-12">
+                    <div class="row">
+                        <h5 class="col-12 fst-italic fs-3">
+                            ¿ Cuáles son los métodos de pago aceptados en MoonShop ?
+                        </h5>
+                    </div>
+                    <div class="row">
+                        <p class="col-12"> Aceptamos varios métodos de pago, incluyendo tarjetas de crédito/débito (Visa, Mastercard, American Express), PayPal y transferencias bancarias.</p>
+                    </div>
+                    <div class="row">
+                        <h5 class="col-12 fst-italic fs-3">
+                            ¿ Cuánto tiempo tarda en llegar mi pedido ?
+                        </h5>
+                    </div>
+                    <div class="row">
+                        <p class="col-12" > El tiempo de entrega depende de tu ubicación y del método de envío seleccionado. Por lo general, nuestros pedidos se entregan dentro de 5-7 días hábiles, pero ten en cuenta que pueden existir demoras debido a circunstancias imprevistas.</p>
+                    </div>
+                    <div class="row">
+                        <h5 class="col-12 fst-italic fs-3">¿ Puedo realizar cambios o devoluciones de mis productos ?</h5>
+                    </div>
+                    <div class="row">
+                        <p class="col-12">Sí, aceptamos cambios y devoluciones dentro de los 30 días posteriores a la recepción del pedido. Los productos deben estar en su estado original, sin usar y con las etiquetas intactas. Por favor, consulta nuestra política de cambios y devoluciones para obtener más detalles.</p>            
+                    </div>
+                    <div class="row">
+                        <h5 class="col-12 fst-italic fs-3">¿ Ofrecen envío internacional ?</h5>
+                    </div>
+                    <div class="row">
+                        <p class="col-12">
+                            Sí, ofrecemos envío internacional a varios países. Durante el proceso de pago, podrás seleccionar tu país de envío y ver las opciones de envío disponibles junto con los costos correspondientes.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <h5 class="col-12 fst-italic fs-3">¿ Cómo puedo realizar un seguimiento de mi pedido ?</h5>
+                    </div>
+                    <div class="row">
+                        <p class="col-12">Una vez que tu pedido haya sido enviado, recibirás un correo electrónico de confirmación con un número de seguimiento. Puedes utilizar este número para rastrear el progreso de tu envío a través del sitio web de la compañía de transporte.</p>
+                    </div>
+                    <div class="row">
+                        <h5 class="col-12 fst-italic fs-3"> ¿ Puedo devolver un producto si no estoy satisfecha con mi compra ?</h5>
+                    </div>
+                    <div class="row">
+                        <p class="col-12">¡Por supuesto! Si no estás satisfecha con tu compra, tienes 30 días para devolver el artículo en su estado original y recibir un reembolso o un crédito para futuras compras.</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 d-none d-xl-block">
+                    <div class="row">
+                        <img 
+                            
+                            src="../assets/img/foto_Faq.webp" 
+                            alt="foto modelo fondo gris"
+                            height="390rem">
+                    </div>
+                    <div class="row">
+                        <div>
+                            <img 
+                            class="img-fluid"
+                            src="../assets/img/foto_modelo_faq.webp" 
+                            alt="foto modelo gris"
+                            height="390rem"       
+                            > 
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <p class="col-xl-12"> Aceptamos varios métodos de pago, incluyendo tarjetas de crédito/débito (Visa, Mastercard, American Express), PayPal y transferencias bancarias.</p>
+            <div class="row d-xl-none">
+                <div class="col-6">
+                    <img 
+                    class="img-fluid"
+                    src="../assets/img/foto_Faq.webp" 
+                    alt="foto modelo fondo gris"
+                    height="390rem">
+                </div>
+                <div class="col-6">
+                    <img 
+                    class="img-fluid"
+                    src="../assets/img/foto_modelo_faq.webp" 
+                    alt="foto modelo gris"
+                    height="390rem"       
+                    > 
+                </div>
             </div>
-            <div class="row">
-                <h5 class="col-xl-12 col-md-12 fst-italic fs-3">
-                    ¿ Cuánto tiempo tarda en llegar mi pedido ?
-                </h5>
-            </div>
-            <div class="row">
-                <p class="col-xl-12" > El tiempo de entrega depende de tu ubicación y del método de envío seleccionado. Por lo general, nuestros pedidos se entregan dentro de 5-7 días hábiles, pero ten en cuenta que pueden existir demoras debido a circunstancias imprevistas.</p>
-            </div>
-            <div class="row">
-                <h5 class="col-xl-12 col-md-12 fst-italic fs-3">¿ Puedo realizar cambios o devoluciones de mis productos ?</h5>
-            </div>
-            <div class="row">
-                <p class="col-xl-12">Sí, aceptamos cambios y devoluciones dentro de los 30 días posteriores a la recepción del pedido. Los productos deben estar en su estado original, sin usar y con las etiquetas intactas. Por favor, consulta nuestra política de cambios y devoluciones para obtener más detalles.</p>            
-            </div>
-            <div class="row">
-                <h5 class="col-xl-12 col-md-12 fst-italic fs-3">¿ Ofrecen envío internacional ?</h5>
-            </div>
-            <div class="row">
-                <p class="col-xl-12">
-                    Sí, ofrecemos envío internacional a varios países. Durante el proceso de pago, podrás seleccionar tu país de envío y ver las opciones de envío disponibles junto con los costos correspondientes.
-                </p>
-            </div>
-            <div class="row">
-                <h5 class="col-xl-12 col-md-12 fst-italic fs-3">¿ Cómo puedo realizar un seguimiento de mi pedido ?</h5>
-            </div>
-            <div class="row">
-                <p class="col-xl-12">Una vez que tu pedido haya sido enviado, recibirás un correo electrónico de confirmación con un número de seguimiento. Puedes utilizar este número para rastrear el progreso de tu envío a través del sitio web de la compañía de transporte.</p>
-            </div>
-            <div class="row">
-                <h5 class="col-xl-12 col-md-12 fst-italic fs-3">¿ Tienen tallas para todas las personas ?</h5>
-            </div>
-            <div class="row">
-                <p class="col-xl-12">Sí, nos esforzamos por ofrecer una amplia variedad de tallas para satisfacer las necesidades de todos nuestros clientes. Nuestras opciones de tamaño suelen ir desde XS hasta XXL. Te recomendamos consultar la guía de tallas disponible en la página del producto para encontrar la talla adecuada.</p>
-            </div>
-            <div class="row">
-                <h5 class="col-xl-12 col-md-12 fst-italic fs-3">
-                    ¿ Cómo puedo contactar al servicio al cliente de MoonShop ?
-            </div>
-            <div class="row">
-                <p class="col-xl-12">
-                    Puedes comunicarte con nuestro equipo de servicio al cliente a través de nuestro formulario de contacto en el sitio web o atraves del boton de whatsapp
-                </p>
-            </div>
+            
         </main>
         <footer class="row">
-            <p class="col-xl-12 col-10 text-start">
+            <p class="col-md-12 col-10 text-center">
                 copy ® Santino Peiretti todos los derechos reservados
             </p>
-            <div class="d-xl-none col-2 text-center">
+            <div class="d-md-none col-2 text-center">
                 <a
                     href="https://web.whatsapp.com/"
                     alt="ruta a mensaje de whatsapp"
                     target="_blank">
                     <img
                         src="../assets/img/whatsapp-svgrepo-com.svg"
-                        alt="Icono whatsapp"
+                        alt="Icono de whatsapp"
                         height="50px"
                         width="50px" />
                 </a>

@@ -1,0 +1,37 @@
+#recuadro-quienes-somos{
+    background: rgb(194,181,167);
+    background: linear-gradient(90deg, rgba(194,181,167,1) 0%, rgba(126,106,142,1) 48%, rgba(194,181,167,1) 100%);
+
+
+}
+main{
+    div{
+        ul{
+            li{
+                padding-left: 2% !important;
+                padding-right: 2% !important;
+                padding-top: 1% !important;
+                list-style-type: none;
+                div{
+                    border: grey 1px solid;
+                    transition: transform 2s;
+                    input{
+                        border-radius: 11px;
+                        padding-bottom: 1%;
+                        width: 40%;
+                    }
+                    &:hover{
+                        transform: scale(1.03, 1);
+                        background: rgb(194,181,167);
+                        background: linear-gradient(90deg, rgba(194,181,167,1) 0%, rgba(126,106,142,1) 48%, rgba(194,181,167,1) 100%);                      
+                    }
+                }
+            }
+        }
+    }
+}
+
+.fotoProducto{
+    width:12rem;
+    height: 9rem;
+}
