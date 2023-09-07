@@ -150,7 +150,7 @@ function escribir(){
 function main(){
     let termine = false
     while (! termine){
-        let ingresado = prompt('Que desea hacer')
+        let ingresado = prompt("Bienvenidos a MoonShop, nuestros prodcutos en stock son: RemeraNegra, RemeraBlanca, RemeraRoj escribe agregarProducto nombreProducto para agregar el producto al carrito escribe eliminarProducto nombreProducto para eliminar el producto al carrito")
         arreglo = ingresado.split(" ")
         comando = arreglo[0]
         if (comando == 'agregarProducto'){
