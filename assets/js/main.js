@@ -38,7 +38,7 @@ class Carrito{
         // })
 
         for (let i = 0; i< this.elementos.length; i++){
-            if ((this.elementos[i][nombreProducto]) == prodcuto){
+            if ((this.elementos[i].includes(prodcuto) )){
                 this.elementos.splice(i,1)
                 return true
             }
@@ -52,10 +52,15 @@ class Carrito{
     }
     
     valorTotal(){
+        // let valor = 0
+        // for (let i = 0; i < this.elementos.length; i++){
+        //     valor += this.elementos[i][valorProducto]
+        // }
+        // return valor
         let valor = 0
-        for (let i = 0; i < this.elementos.length; i++){
-            valor += this.elementos[i][valorProducto]
-        }
+        this.elementos.forEach((producto) =>{
+            valor += producto[valorProducto]
+        })
         return valor
     }   
 }
@@ -71,34 +76,34 @@ function consolaVenderProducto(producto){
         unidad = RemeraNegra.venderPrducto()
         if (unidad != undefined){
             carrito.agregarProducto(unidad)
-            console.log('Agregado exitosamente')
+            alert('Agregado exitosamente')
         }
         else{
-            console.log("producto sin stock")
+            alert("producto sin stock")
         }
     }
     else if (producto == 'RemeraBlanca'){
         unidad = RemeraBlanca.venderPrducto()
         if (unidad != undefined){
             carrito.agregarProducto(unidad)
-            console.log('Agregado exitosamente')
+            alert('Agregado exitosamente')
         }
         else{
-            console.log("producto sin stock")
+            alert("producto sin stock")
         }
     }
     else if (producto == 'RemeraRoja'){
         unidad = RemeraRoja.venderPrducto()
         if (unidad != undefined){
             carrito.agregarProducto(unidad)
-            console.log('Agregado exitosamente')
+            alert('Agregado exitosamente')
             }
         else{
-            console.log("producto sin stock")
+            alert("producto sin stock")
         }
     }
     else{
-        console.log('producto invalido')
+        alert('producto invalido')
     }
 }
 function consolaEliminarProducto(producto){
@@ -106,56 +111,47 @@ function consolaEliminarProducto(producto){
         elimineProducto = carrito.eliminarUnProducto(producto)
         if (elimineProducto){
             RemeraNegra.devolverProducto()
-            console.log('Eliminado Exitosamente')
+            alert('Eliminado Exitosamente')
         }
         else{
-            console.log("El producto no se encuentra en el carrito")
+            alert("El producto no se encuentra en el carrito")
         }
     }
     else if (producto == 'RemeraBlanca'){
         elimineProducto = carrito.eliminarUnProducto(producto)
         if (elimineProducto){
             RemeraBlanca.devolverProducto()
-            console.log('Eliminado Exitosamente')
+            alert('Eliminado Exitosamente')
         }
         else{
-            console.log("El producto no se encuentra en el carrito")
+            alert("El producto no se encuentra en el carrito")
         }
     }
     else if (producto == 'RemeraRoja'){
         elimineProducto = carrito.eliminarUnProducto(producto)
         if (elimineProducto){
             RemeraRoja.devolverProducto()
-            console.log('Eliminado Exitosamente')
+            alert('Eliminado Exitosamente')
         }
         else{
-            console.log("El producto no se encuentra en el carrito")
+            alert("El producto no se encuentra en el carrito")
         }
     }
     else{
-        console.log('producto invalido')
+        alert('producto invalido')
     }
-}
-
-function escribir(){
-    console.log('Bienvenidos a MoonShop, nuestros prodcutos en stock son: RemeraNegra, RemeraBlanca, RemeraRoja')
-    console.log('escribe "agregarProducto nombreProducto" para agregar el producto al carrito')
-    console.log('escribe "eliminarProducto nombreProducto" para eliminar el producto al carrito')
-    console.log('escribe "vaciarCarrito" para dejar el carrito en cero')
-    console.log('escribe "finalizarCompra" para finalizar la compra y llevarte nuestros prodcutos de ultima moda')
-    console.log('escribe "exit" para irte de nuestra tienda sin comprar')
 }
 
 
 function main(){
     let termine = false
     while (! termine){
-        let ingresado = prompt("Bienvenidos a MoonShop, nuestros prodcutos en stock son: RemeraNegra, RemeraBlanca, RemeraRoj escribe agregarProducto nombreProducto para agregar el producto al carrito escribe eliminarProducto nombreProducto para eliminar el producto al carrito")
+        let ingresado = prompt('Bienvenidos a MoonShop, nuestros prodcutos en stock son: RemeraNegra, RemeraBlanca, RemeraRoja escribe "agregarProducto nombreProducto" para agregar el producto al carrito escribe "eliminarProducto nombreProducto" para eliminar el producto al carrito escribe "vaciarCarrito" para dejar el carrito en cero escribe "finalizarCompra" para finalizar la compra y llevarte nuestros prodcutos de ultima moda escribe "exit" para irte de nuestra tienda sin comprar')
         arreglo = ingresado.split(" ")
         comando = arreglo[0]
         if (comando == 'agregarProducto'){
             if (arreglo.length != 2){
-                console.log('falta agregar producto para sumar al carrito')
+                alert('falta agregar producto para sumar al carrito')
             }
             else {
                 consolaVenderProducto(arreglo[1])
@@ -163,7 +159,7 @@ function main(){
         }
         else if (comando == 'eliminarProducto'){
             if (arreglo.length != 2){
-                console.log('falta agregar producto a eliminar')
+                alert('falta agregar producto a eliminar')
             }
             else {
                 consolaEliminarProducto(arreglo[1])
@@ -171,30 +167,24 @@ function main(){
         }
         else if (comando == 'vaciarCarrito'){
             carrito.vaciarCarrito()
-            console.log('carrito vaciado con exito')
+            alert('carrito vaciado con exito')
         }
         else if (comando == 'finalizarCompra'){
             valorAAbonar = carrito.valorTotal()
-            console.log('Su total a abonar es $' + valorAAbonar)
-            console.log('Muchas gracias por su compra')
+            alert('Su total a abonar es $' + valorAAbonar)
+            alert('Muchas gracias por su compra')
             termine = true
         }
         else if (comando == 'exit'){
             termine = true
-            console.log('Gracias por su visita')
+            alert('Gracias por su visita')
         }
         else{
-            console.log('comando incorrecto')
+            alert('comando incorrecto')
         }
         
     
     }
 }
 
-setTimeout(() => {
-    escribir()
-}, 2000);
-
-setTimeout(() => {
-    main()
-}, 3000);
+main()
