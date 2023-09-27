@@ -1,0 +1,28 @@
+
+[  
+    { 
+        "title": "Camiseta Talle S",
+        "precio": "$1800",
+        "url": "./assets/img/camisetacoloraeleccion.webp"
+    },
+    {
+        "title": "Pulover Blanco",
+        "precio": "$10000",
+        "url": "./assets/img/puloverblanco.webp"
+    },
+    {
+        "title": "Remera amarilla",
+        "precio": "$5000",
+        "url": "./assets/img/remerabasicaamarilla.webp"
+    },
+    {
+        "title": "Croc Top Rojo",
+        "precio": "$3500",
+        "url":"./assets/img/2CroptopRojo.webp"
+    },
+    {
+        "title": "Remera Negra",
+        "precio": "$5000",
+        "url":"./assets/img/5remererabasica.webp"
+    }
+]

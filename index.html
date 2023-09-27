@@ -46,17 +46,56 @@
                     class="col-md-8 col-12 text-center">
                     Moon Shop
                 </p>
-                <div class="d-none d-md-block  col-2 text-center">
-                    <a
-                        href="https://web.whatsapp.com/"
-                        alt="ruta a mensaje de whatsapp"
-                        target="_blank">
-                            <img
-                                src="./assets/img/whatsapp-svgrepo-com.svg"
-                                alt="Icono whatsapp"
-                                height="50px"
-                                width="50px" />
-                    </a>
+                <div class="container-icon d-none d-md-block  col-2">
+                    <div class="container-cart-icon d-none d-md-block">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="icon-cart"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                            />
+                        </svg>
+                        <div class="count-products">
+                            <span id="contador-productos">0</span>
+                        </div>
+                    </div>
+    
+                    <div class="container-cart-products hidden-cart">
+                        <div class="row-product hidden">
+                            <div class="cart-product">
+                                <div class="info-cart-product">
+                                </div>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="icon-close"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                        
+    
+                        <div class="cart-total hidden">
+                            <h3>Total:</h3>
+                            <span class="total-pagar">$200</span>
+                        </div>
+                        <p class="cart-empty">El carrito está vacío</p>
+                    </div>
                 </div>
             </div>
             <div class="row text-center">
@@ -142,88 +181,27 @@
             </div>
     
             <div class="row ">
-                <ul class="row flex-nowrap overflow-auto " >
-                    <li class="col-6 col-md-4 col-lg-3 text-center">
-                        <div width="80rem">
-                            <img
-                            class="fotoProducto img-fluid"
-                            src="./assets/img/camisetacoloraeleccion.webp"
-                            alt="Foto Camiseta talle unico" />
-
-                            <p>Camiseta Talle Unico</p>
-
-                            <p>Precio: $1800</p>
-                            <input
-                                type="button"
-                                value="Comprar" />
-                        </div>
-
-                    </li>
-                    <li class="col-6 col-md-4 col-lg-3 text-center">
-                        <div width="80rem">
-                            <img
-                            class="fotoProducto img-fluid"
-                            src="./assets/img/puloverblanco.webp"
-                            alt="foto pulover blanco" />
-
-                            <p>Pulover Blanco</p>
-
-                            <p>Precio: $10000</p>
-                            <input
-                                type="button"
-                                value="Comprar" />
-                        </div>
-
-                    </li>
-                    <li class="col-6 col-md-4 col-lg-3 text-center">
-                        <div width="80rem">
-                            <img
-                            class="fotoProducto img-fluid"
-                            src="./assets/img/remerabasicaamarilla.webp"
-                            alt="remera basica amarilla" />
-
-                            <p>Remera Basica Amarilla</p>
-
-                            <p>Precio: $5000</p>
-                            <input
-                                type="button"
-                                value="Comprar" />
-                        </div>
-
-                    </li>
-                    <li class="col-6 col-md-4 col-lg-3 text-center">
-                        <div width="80rem">
-                            <img
-                            class="fotoProducto img-fluid"
-                            src="./assets/img/2CroptopRojo.webp"
-                            alt="Foto Crop Top Rojo" />
-
-                            <p>Crop Top Rojo</p>
-
-                            <p>Precio: $3500</p>
-                            <input
-                                type="button"
-                                value="Comprar" />
-                        </div>
-
-                    </li>
-                    <li class="col-6 col-md-4 col-lg-3 text-center">
-                        <div width="80rem">
-                            <img
-                            class="fotoProducto img-fluid"
-                            src="./assets/img/5remererabasica.webp"
-                            alt="Foto remera basica negra" />
-
-                            <p>Remera Negra Talle S</p>
-
-                            <p>Precio: $5000</p>
-                            <input
-                                type="button"
-                                value="Comprar" />
-                        </div>
-
-                    </li>
+                <ul class="container-items row flex-nowrap overflow-auto" id="container-items" >
                 </ul>
+                <template id="templateCard"> 
+                    <li class="col-6 col-md-4 col-lg-3 text-center">
+                        <div width="80rem">
+                            <img
+                            class="fotoProducto img-fluid"
+                            src=""
+                            alt="" />
+
+                            <h6>Titulo</h6>
+
+                            <p class="price">Precio</p>
+                            <input
+                                class="btn-add-cart"
+                                type="button"
+                                value="Comprar" />
+                        </div>
+
+                    </li>
+                </template>
             </div>
             <div class="col-xxl-8 col-12">
                 <img

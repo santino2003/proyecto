@@ -1,190 +1,167 @@
-// alert()
-const nombreProducto = 0
-const valorProducto = 1
 
-class Prodcuto{
-    constructor(nombre,precio,cantidadDisponible){
-        this.nombre = nombre;
-        this.precio = parseFloat(precio);
-        this.cantidadDisponible = cantidadDisponible
-    }
 
-    venderPrducto(){
-        if (this.cantidadDisponible >=1){
-            this.cantidadDisponible -= 1
-            return [this.nombre,this.precio]
-        }
-    }
+const items = document.getElementById('container-items');
+const template = document.getElementById('templateCard').content
+const fragment = document.createDocumentFragment();
 
-    devolverProducto(){
-        this.cantidadDisponible += 1
-    }
+const btnCart = document.querySelector('.container-cart-icon');
+const containerCartProducts = document.querySelector(
+	'.container-cart-products'
+);
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	fetchData()
+})
+
+
+const fetchData = async() => {
+	try {
+		const respuesta = await fetch('api.json')
+		const datos = await respuesta.json()
+		
+		copiarEnHtml(datos)
+	} catch (error) {
+		console.log(error)
+	}
 }
 
-class Carrito{
-    constructor(){
-        this.elementos = []
-    }
-    agregarProducto(prodcuto){
-        this.elementos.push(prodcuto)
-        
-    }
-    eliminarUnProducto(prodcuto){
-        // this.elementos.forEach((producto, index)=> {
-        //     if (producto[nombreProducto] == prodcuto){
-        //         this.elementos.splice(index,1)
-        //     }
-        // })
-
-        for (let i = 0; i< this.elementos.length; i++){
-            if ((this.elementos[i].includes(prodcuto) )){
-                this.elementos.splice(i,1)
-                return true
-            }
-        }
-        return false
-
-    }
-    vaciarCarrito(){
-        let total = 0
-        this.elementos = []
-    }
-    
-    valorTotal(){
-        // let valor = 0
-        // for (let i = 0; i < this.elementos.length; i++){
-        //     valor += this.elementos[i][valorProducto]
-        // }
-        // return valor
-        let valor = 0
-        this.elementos.forEach((producto) =>{
-            valor += producto[valorProducto]
-        })
-        return valor
-    }   
+const copiarEnHtml = datos => {
+	datos.forEach(producto => {
+		
+		template.querySelector('h6').textContent = producto.title
+		template.querySelector('p').textContent = producto.precio
+		template.querySelector('img').setAttribute("src",producto.url)
+		
+		const clone = template.cloneNode(true)
+		
+		fragment.appendChild(clone)
+		console.log(fragment)
+	})
+	items.appendChild(fragment)
 }
 
-let RemeraNegra = new Prodcuto('RemeraNegra', 9000, 0)
-let RemeraBlanca = new Prodcuto('RemeraBlanca', 6000, 3)
-let RemeraRoja = new Prodcuto('RemeraRoja', 4000, 2)
+/*--------------------------*/
+btnCart.addEventListener('click', () => {
+	containerCartProducts.classList.toggle('hidden-cart');
+});
 
-let carrito = new Carrito()
+/* ========================= */
+const cartInfo = document.querySelector('.cart-product');
+const rowProduct = document.querySelector('.row-product');
 
-function consolaVenderProducto(producto){
-    if (producto == 'RemeraNegra'){
-        unidad = RemeraNegra.venderPrducto()
-        if (unidad != undefined){
-            carrito.agregarProducto(unidad)
-            alert('Agregado exitosamente')
-        }
-        else{
-            alert("producto sin stock")
-        }
-    }
-    else if (producto == 'RemeraBlanca'){
-        unidad = RemeraBlanca.venderPrducto()
-        if (unidad != undefined){
-            carrito.agregarProducto(unidad)
-            alert('Agregado exitosamente')
-        }
-        else{
-            alert("producto sin stock")
-        }
-    }
-    else if (producto == 'RemeraRoja'){
-        unidad = RemeraRoja.venderPrducto()
-        if (unidad != undefined){
-            carrito.agregarProducto(unidad)
-            alert('Agregado exitosamente')
-            }
-        else{
-            alert("producto sin stock")
-        }
-    }
-    else{
-        alert('producto invalido')
-    }
-}
-function consolaEliminarProducto(producto){
-    if (producto == 'RemeraNegra'){
-        elimineProducto = carrito.eliminarUnProducto(producto)
-        if (elimineProducto){
-            RemeraNegra.devolverProducto()
-            alert('Eliminado Exitosamente')
-        }
-        else{
-            alert("El producto no se encuentra en el carrito")
-        }
-    }
-    else if (producto == 'RemeraBlanca'){
-        elimineProducto = carrito.eliminarUnProducto(producto)
-        if (elimineProducto){
-            RemeraBlanca.devolverProducto()
-            alert('Eliminado Exitosamente')
-        }
-        else{
-            alert("El producto no se encuentra en el carrito")
-        }
-    }
-    else if (producto == 'RemeraRoja'){
-        elimineProducto = carrito.eliminarUnProducto(producto)
-        if (elimineProducto){
-            RemeraRoja.devolverProducto()
-            alert('Eliminado Exitosamente')
-        }
-        else{
-            alert("El producto no se encuentra en el carrito")
-        }
-    }
-    else{
-        alert('producto invalido')
-    }
-}
+// Lista de todos los contenedores de productos
+const productsList = document.querySelector('.container-items');
 
+// Variable de arreglos de Productos
+let allProducts = [];
 
-function main(){
-    let termine = false
-    while (! termine){
-        let ingresado = prompt('Bienvenidos a MoonShop, nuestros prodcutos en stock son: RemeraNegra, RemeraBlanca, RemeraRoja escribe "agregarProducto nombreProducto" para agregar el producto al carrito escribe "eliminarProducto nombreProducto" para eliminar el producto al carrito escribe "vaciarCarrito" para dejar el carrito en cero escribe "finalizarCompra" para finalizar la compra y llevarte nuestros prodcutos de ultima moda escribe "exit" para irte de nuestra tienda sin comprar')
-        arreglo = ingresado.split(" ")
-        comando = arreglo[0]
-        if (comando == 'agregarProducto'){
-            if (arreglo.length != 2){
-                alert('falta agregar producto para sumar al carrito')
-            }
-            else {
-                consolaVenderProducto(arreglo[1])
-            }
-        }
-        else if (comando == 'eliminarProducto'){
-            if (arreglo.length != 2){
-                alert('falta agregar producto a eliminar')
-            }
-            else {
-                consolaEliminarProducto(arreglo[1])
-            }
-        }
-        else if (comando == 'vaciarCarrito'){
-            carrito.vaciarCarrito()
-            alert('carrito vaciado con exito')
-        }
-        else if (comando == 'finalizarCompra'){
-            valorAAbonar = carrito.valorTotal()
-            alert('Su total a abonar es $' + valorAAbonar)
-            alert('Muchas gracias por su compra')
-            termine = true
-        }
-        else if (comando == 'exit'){
-            termine = true
-            alert('Gracias por su visita')
-        }
-        else{
-            alert('comando incorrecto')
-        }
-        
-    
-    }
-}
+const valorTotal = document.querySelector('.total-pagar');
 
-main()
+const countProducts = document.querySelector('#contador-productos');
+
+const cartEmpty = document.querySelector('.cart-empty');
+const cartTotal = document.querySelector('.cart-total');
+
+productsList.addEventListener('click', e => {
+	if (e.target.classList.contains('btn-add-cart')) {
+		const product = e.target.parentElement;
+
+		const infoProduct = {
+			quantity: 1,
+			title: product.querySelector('h6').textContent,
+			price: product.querySelector('p').textContent,
+		};
+
+		const exits = allProducts.some(
+			product => product.title === infoProduct.title
+		);
+
+		if (exits) {
+			const products = allProducts.map(product => {
+				if (product.title === infoProduct.title) {
+					product.quantity++;
+					return product;
+				} else {
+					return product;
+				}
+			});
+			allProducts = [...products];
+		} else {
+			allProducts = [...allProducts, infoProduct];
+		}
+
+		showHTML();
+	}
+});
+
+rowProduct.addEventListener('click', e => {
+	if (e.target.classList.contains('icon-close')) {
+		const product = e.target.parentElement;
+		const title = product.querySelector('p').textContent;
+
+		allProducts = allProducts.filter(
+			product => product.title !== title
+		);
+
+		console.log(allProducts);
+
+		showHTML();
+	}
+});
+
+// Funcion para mostrar  HTML
+const showHTML = () => {
+	if (!allProducts.length) {
+		cartEmpty.classList.remove('hidden');
+		rowProduct.classList.add('hidden');
+		cartTotal.classList.add('hidden');
+	} else {
+		cartEmpty.classList.add('hidden');
+		rowProduct.classList.remove('hidden');
+		cartTotal.classList.remove('hidden');
+	}
+
+	// Limpiar HTML
+	rowProduct.innerHTML = '';
+
+	let total = 0;
+	let totalOfProducts = 0;
+
+	allProducts.forEach(product => {
+		const containerProduct = document.createElement('div');
+		containerProduct.classList.add('cart-product');
+
+		containerProduct.innerHTML = `
+            <div class="info-cart-product">
+                <span class="cantidad-producto-carrito">${product.quantity}</span>
+                <p class="titulo-producto-carrito">${product.title}</p>
+                <span class="precio-producto-carrito">${product.price}</span>
+            </div>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon-close"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                />
+            </svg>
+        `;
+
+		rowProduct.append(containerProduct);
+
+		total =
+			total + parseInt(product.quantity * product.price.slice(1));
+		totalOfProducts = totalOfProducts + product.quantity;
+	});
+
+	valorTotal.innerText = `$${total}`;
+	countProducts.innerText = totalOfProducts;
+};
