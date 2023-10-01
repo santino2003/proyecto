@@ -46,15 +46,15 @@
                     class="col-md-8 col-12 text-center">
                     Moon Shop
                 </p>
-                <div class="container-icon d-none d-md-block  col-2">
-                    <div class="container-cart-icon d-none d-md-block">
+                <div class="contenedorIcono d-none d-md-block  col-2">
+                    <div class="carritoContenedorItems d-none d-md-block">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
                             stroke="currentColor"
-                            class="icon-cart"
+                            class="iconoCarrito"
                         >
                             <path
                                 stroke-linecap="round"
@@ -62,15 +62,15 @@
                                 d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                             />
                         </svg>
-                        <div class="count-products">
+                        <div class="contador-productos">
                             <span id="contador-productos">0</span>
                         </div>
                     </div>
     
-                    <div class="container-cart-products hidden-cart">
-                        <div class="row-product hidden">
+                    <div class="contendorCarritoProductos carritoOcultar">
+                        <div class="filaProducto hidden">
                             <div class="cart-product">
-                                <div class="info-cart-product">
+                                <div class="infoCarritoProducto">
                                 </div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@
                                     viewBox="0 0 24 24"
                                     stroke-width="1.5"
                                     stroke="currentColor"
-                                    class="icon-close"
+                                    class="cerrarIcono"
                                 >
                                     <path
                                         stroke-linecap="round"
@@ -90,14 +90,15 @@
                         </div>
                         
     
-                        <div class="cart-total hidden">
+                        <div class="totalCarrito hidden">
                             <h3>Total:</h3>
                             <span class="total-pagar">$200</span>
                         </div>
-                        <p class="cart-empty">El carrito está vacío</p>
+                        <p class="carritoVacio">El carrito está vacío</p>
                     </div>
                 </div>
             </div>
+            
             <div class="row text-center">
                 <nav class="navbar navbar-expand-md d-flex justify-content-center">
                     <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
@@ -181,7 +182,7 @@
             </div>
     
             <div class="row ">
-                <ul class="container-items row flex-nowrap overflow-auto" id="container-items" >
+                <ul class="contenedorItems row flex-nowrap overflow-auto" id="contenedorItems" >
                 </ul>
                 <template id="templateCard"> 
                     <li class="col-6 col-md-4 col-lg-3 text-center">

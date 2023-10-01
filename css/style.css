@@ -104,17 +104,12 @@ footer {
 /*# sourceMappingURL=style.css.map */
 
 
-header{
-  display: flex;
-  justify-content: space-between;
-  padding: 30px 0 40px 0;
-}
 
-.container-icon{
+.contenedorIcono{
   position: relative;
 }
 
-.count-products{
+.contador-productos{
   position: absolute;
   top: 10%;
   right: 80%;
@@ -134,7 +129,7 @@ header{
   font-size: 12px;
 }
 
-.container-cart-products{
+.contendorCarritoProductos{
   position: absolute;
   top: 50px;
   right: 0;
@@ -157,24 +152,24 @@ header{
 
 }
 
-.info-cart-product{
+.infoCarritoProducto{
   display: flex;
   justify-content: space-between;
   flex: 0.8;
 }
 
 
-.icon-close{
+.cerrarIcono{
   width: 25px;
   height: 25px;
 }
 
-.icon-close:hover{
+.cerrarIcono:hover{
   stroke: red;
   cursor: pointer;
 }
 
-.cart-total{
+.totalCarrito{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,7 +177,7 @@ header{
   gap: 20px;
 }
 
-.cart-total h3{
+.totalCarrito h3{
   font-size: 20px;
   font-weight: 700;
 }
@@ -192,17 +187,17 @@ header{
   font-weight: 900;
 }
 
-.hidden-cart{
+.carritoOcultar{
   display: none;
 }
 
-.icon-cart{
+.iconoCarrito{
   width: 40px;
   height: 40px;
   stroke: #000;
 }
 
-.icon-cart:hover{
+.iconoCarrito:hover{
   cursor: pointer;
 }
 
@@ -210,7 +205,7 @@ img{
   max-width: 100%;
 }
 
-.cart-empty{
+.carritoVacio{
   padding: 20px;
   text-align: center;
 }
