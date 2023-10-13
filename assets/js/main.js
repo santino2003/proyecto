@@ -10,7 +10,6 @@ const containerCartProductos = document.querySelector(
 );
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
 	fetchData()
 })
