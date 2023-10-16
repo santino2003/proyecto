@@ -1,5 +1,6 @@
 
 
+
 const items = document.getElementById('contenedorItems');
 const template = document.getElementById('templateCard').content
 const fragment = document.createDocumentFragment();
@@ -19,7 +20,7 @@ const fetchData = async() => {
 	try {
 		const respuesta = await fetch('api.json')
 		const datos = await respuesta.json()
-		
+		console.log(datos)
 		copiarEnHtml(datos)
 	} catch (error) {
 		console.log(error)
@@ -32,11 +33,12 @@ const copiarEnHtml = datos => {
 		template.querySelector('h6').textContent = producto.title
 		template.querySelector('p').textContent = producto.precio
 		template.querySelector('img').setAttribute("src",producto.url)
+		template.querySelector('input').setAttribute("value",producto.cantidad)
 		
 		const clone = template.cloneNode(true)
 		
 		fragment.appendChild(clone)
-		console.log(fragment)
+		
 	})
 	items.appendChild(fragment)
 }
@@ -65,11 +67,12 @@ const carritoTotal = document.querySelector('.totalCarrito');
 listaProducto.addEventListener('click', e => {
 	if (e.target.classList.contains('btn-add-cart')) {
 		const producto = e.target.parentElement;
-
+		
 		const infoProducto = {
 			quantity: 1,
 			title: producto.querySelector('h6').textContent,
 			price: producto.querySelector('p').textContent,
+			cantidad: producto.querySelector('input').value
 		};
 
 		const exits = todosLosProductos.some(
@@ -77,12 +80,22 @@ listaProducto.addEventListener('click', e => {
 		);
 
 		if (exits) {
-			const productos = todosLosProductos.map(producto => {
-				if (producto.title === infoProducto.title) {
-					producto.quantity++;
-					return producto;
+			const productos = todosLosProductos.map(product => {
+				
+				if (product.title === infoProducto.title) {
+					if (product.cantidad > 0){
+						product.cantidad --;
+						console.log(product.cantidad)
+						product.quantity++;
+						
+					}
+					else{
+						Swal.fire('¡Lo sentimos!', 'En este momento no contamos con stock disponible', 'error');
+					}
+					return product;
+					
 				} else {
-					return producto;
+					return product;
 				}
 			});
 			todosLosProductos = [...productos];
@@ -96,16 +109,34 @@ listaProducto.addEventListener('click', e => {
 
 filaProducto.addEventListener('click', e => {
 	if (e.target.classList.contains('cerrarIcono')) {
-		const producto = e.target.parentElement;
-		const title = producto.querySelector('p').textContent;
+		Swal.fire({
+			title: 'Estas seguro?',
+			text: "Vas a eliminar todos los productos seleccionados!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Si,borrar',
+			cancelButtonText: 'Cancelar'
+		  }).then((result) => {
+			if (result.isConfirmed) {
+				const producto = e.target.parentElement;
+				const title = producto.querySelector('p').textContent;
+				todosLosProductos = todosLosProductos.filter(
+					producto => producto.title !== title
+				);
+				console.log(todosLosProductos);
+				Swal.fire(
+					'Borrado!',
+					'Los productos han sido eliminados',
+					'success'
+				)
+				
+				mostrarHTML();
+				
+			}
+		  })
 
-		todosLosProductos = todosLosProductos.filter(
-			producto => producto.title !== title
-		);
-
-		console.log(todosLosProductos);
-
-		mostrarHTML();
 	}
 });
 
